@@ -1,0 +1,238 @@
+/* basic reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #222;
+}
+
+/* navbar */
+.navbar {
+  background-color: #0F6B3E;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  margin: 0;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+/* main container */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* hero - campus video background */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background-image: url("campus.jpg"); /* fallback if video can't load */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* green overlay on the video (change 0.3 to make it lighter or darker) */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 60, 35, 0.3);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  color: white;
+  margin-top: 0;
+}
+
+.hero input {
+  width: 350px;
+  max-width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+}
+
+.hero .green-btn {
+  background-color: white;
+  color: #0F6B3E;
+  font-weight: bold;
+}
+
+/* buttons */
+.green-btn {
+  background-color: #0F6B3E;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.white-btn {
+  background-color: white;
+  color: #0F6B3E;
+  border: 2px solid #0F6B3E;
+  padding: 12px 22px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.report-buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.report-buttons button {
+  flex: 1;
+}
+
+/* item cards */
+.cards {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  min-width: 220px;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  padding-bottom: 12px;
+  text-align: center;
+}
+
+.image-box {
+  height: 100px;
+  background-color: #dcebe1;
+  margin-bottom: 10px;
+}
+
+.status {
+  background-color: #eaf4ee;
+  color: #0F6B3E;
+  padding: 3px 10px;
+  border-radius: 15px;
+  font-size: 13px;
+}
+
+/* steps */
+.steps {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.step {
+  flex: 1;
+  min-width: 200px;
+  background-color: #eaf4ee;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+/* footer */
+.footer {
+  background-color: #0F6B3E;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}
+
+/* dark mode button */
+.dark-btn {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: white;
+  border-radius: 6px;
+  margin-left: 15px;
+  padding: 3px 9px;
+  cursor: pointer;
+}
+
+/* dark mode */
+body {
+  transition: background-color 0.2s, color 0.2s;
+}
+
+body.dark {
+  background-color: #121a16;
+  color: #e6ece8;
+}
+
+body.dark .navbar,
+body.dark .footer {
+  background-color: #0a3d24;
+}
+
+body.dark .card {
+  background-color: #1a2520;
+  border-color: #33453c;
+}
+
+body.dark .image-box {
+  background-color: #223029;
+}
+
+body.dark .status {
+  background-color: #223029;
+  color: #7fd3a5;
+}
+
+body.dark .step {
+  background-color: #1a2520;
+}
+
+body.dark .white-btn {
+  background-color: transparent;
+  color: #7fd3a5;
+  border-color: #7fd3a5;
+}
+
+body.dark .green-btn {
+  background-color: #1a8a53;
+}
+
+body.dark .hero .green-btn {
+  background-color: white;
+  color: #0F6B3E;
+}
